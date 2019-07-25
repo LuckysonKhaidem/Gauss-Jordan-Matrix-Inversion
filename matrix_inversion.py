@@ -42,20 +42,6 @@ class MatrixInversion:
         j = m-1
         for i in range(m-1,0,-1):
             pivot = aug_A[i][j]
-            if pivot == 0:
-                found = False
-                for k in range(i-1,-1,-1):
-                    if aug_A[k][j] != 0:
-                        temp = aug_A[k].copy()
-                        aug_A[k] = aug_A[i].copy()
-                        aug_A[i] = temp.copy()
-                        found = True 
-                        break
-                if found == False:
-                    raise Exception("The matrix is singular and hence connot be inverted")
-                else:
-                    pivot = aug_A[i][j]
-
             for k in range(i-1,-1,-1):
                 target = aug_A[k][j]
                 multiplier = target / pivot
