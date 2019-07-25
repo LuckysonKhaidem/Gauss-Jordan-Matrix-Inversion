@@ -78,7 +78,7 @@ if __name__ == "__main__":
     #Generate Identity matrix of size mxm
     I_excepted = np.eye(m)
 
-    #To account for floating point precision
+    #To account for floating point imprecision
     I_actual = np.round(np.dot(A,A_inv))
 
     assert np.all(I_excepted == I_actual)
